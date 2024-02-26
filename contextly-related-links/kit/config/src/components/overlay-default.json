@@ -1,0 +1,16 @@
+{
+  "include": [
+    "components/overlay-base"
+  ],
+
+  "base": "components/overlay/default",
+  "js": [
+    "default"
+  ],
+  "css": [
+    "default"
+  ],
+  "media": [
+    "img"
+  ]
+}

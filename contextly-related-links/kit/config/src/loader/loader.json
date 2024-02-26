@@ -1,0 +1,44 @@
+{
+  "versions": true,
+
+  "include": [
+    "data/urls"
+  ],
+  "expose": [
+    "widgets",
+    "overlay-dialogs/overlay",
+    "overlay-dialogs/link",
+    "overlay-dialogs/sidebar",
+    "overlay-dialogs/snippet"
+  ],
+
+  "base": "loader",
+  "js": [
+    "components/create-class",
+    "components/destroyable",
+    "components/proxy",
+    "components/utils",
+    "components/cors",
+    "components/callbacks-gate",
+    {
+      "dev": "components/debug-dev"
+    },
+    {
+      "dev": "components/callbacks-gate-dev"
+    },
+    "components/settings",
+    "components/transmitter",
+
+    "controller",
+    "css",
+    {
+      "dev": "templates-dev"
+    },
+    "js",
+    {
+      "dev": "js-dev"
+    },
+    "package",
+    "libraries"
+  ]
+}

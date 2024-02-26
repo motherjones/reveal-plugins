@@ -1,0 +1,12 @@
+{
+  "include": [
+  ],
+
+  "base": "components/clients",
+  "js": [
+    "base",
+    "session",
+    "base-rest",
+    "rest"
+  ]
+}

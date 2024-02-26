@@ -1,0 +1,10 @@
+{
+  "include": [
+  ],
+
+  "base": "components/clients",
+  "js": [
+    "base",
+    "main-server"
+  ]
+}

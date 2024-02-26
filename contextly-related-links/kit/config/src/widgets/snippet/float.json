@@ -1,0 +1,8 @@
+{
+  "aggregate": true,
+
+  "base": "widgets/css/snippet",
+  "css": [
+    "float"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "automattic/republication-tracker-tool",
+  "description": "Republication Tracker Tool",
+  "type": "wordpress-plugin",
+  "require-dev": {
+    "composer/installers": "~1.6",
+    "automattic/vipwpcs": "^2.0.0",
+    "brainmaestro/composer-git-hooks": "^2.6",
+    "wp-coding-standards/wpcs": "*",
+    "dealerdirect/phpcodesniffer-composer-installer": "*",
+    "phpcompatibility/phpcompatibility-wp": "*"
+  },
+  "license": "GPL-2.0-or-later",
+  "scripts": {
+    "post-install-cmd": [ "vendor/bin/cghooks add --no-lock" ],
+    "post-update-cmd": [ "vendor/bin/cghooks update" ]
+  },
+  "extra": {
+    "hooks": {
+      "commit-msg": [
+        "cat $1 | ./node_modules/.bin/commitlint"
+      ]
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
+}

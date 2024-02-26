@@ -1,0 +1,10 @@
+{
+  "include": [
+    "components/overlay-base"
+  ],
+
+  "base": "components/overlay/dynamic",
+  "js": [
+    "dynamic"
+  ]
+}

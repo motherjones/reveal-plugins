@@ -1,0 +1,13 @@
+{
+  "aggregate": true,
+  "include": [
+    "widgets/button/colossus"
+  ],
+
+  "base": "widgets/css/personalization",
+  "css": [
+    "common",
+    "popup",
+    "colossus"
+  ]
+}

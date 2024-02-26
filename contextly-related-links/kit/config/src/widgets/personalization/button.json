@@ -1,0 +1,12 @@
+{
+  "aggregate": true,
+  "include": [
+    "widgets/button/button"
+  ],
+
+  "base": "widgets/css/personalization",
+  "css": [
+    "common",
+    "popup"
+  ]
+}

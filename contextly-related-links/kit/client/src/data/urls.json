@@ -1,0 +1,19 @@
+{
+  "cdn": "https://assets.context.ly/kit/",
+  "main": {
+    "dev": "//dev.contextly.com/",
+    "live": "//contextly.com/"
+  },
+  "cp": {
+    "dev": "https://dev.contextly.com/",
+    "live": "https://contextly.com/"
+  },
+  "api": {
+    "dev": "//devrest.contextly.com/",
+    "live": "//rest.contextly.com/"
+  },
+  "experience": {
+    "dev": "//devexperience.contextly.com/",
+    "live": "//experience.contextly.com/"
+  }
+}

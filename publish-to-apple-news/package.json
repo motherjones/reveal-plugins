@@ -1,0 +1,48 @@
+{
+  "name": "publish-to-apple-news",
+  "version": "2.4.6",
+  "license": "GPLv3",
+  "main": "index.php",
+  "engines": {
+    "node": "^20.x.x",
+    "npm": "^10.x.x"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11"
+  ],
+  "scripts": {
+    "preinstall": "npx check-node-version --package",
+    "build": "npx check-node-version --package && webpack --mode=production",
+    "dev": "npx check-node-version --package && webpack --mode=development --watch",
+    "lint": "npx check-node-version --package && eslint --ext .jsx --ext .js .",
+    "lint:fix": "npx check-node-version --package && eslint --ext .jsx --ext .js . --fix",
+    "scaffold": "scaffold dir ./scaffold --theme=./",
+    "test": "npx check-node-version --package && jest",
+    "test:watch": "npx check-node-version --package && jest --watch",
+    "prerelease": "check-node-version --package",
+    "release": "npx @alleyinteractive/create-release@latest"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "@babel/preset-react": "^7.23.3",
+    "babel-plugin-styled-components": "^2.1.4",
+    "eslint-config-airbnb": "^19.0.4"
+  },
+  "dependencies": {
+    "@alleyinteractive/block-editor-tools": "^0.6.1",
+    "@wordpress/api-fetch": "^6.39.13",
+    "@wordpress/components": "^25.8.14",
+    "@wordpress/data": "^9.12.13",
+    "@wordpress/dependency-extraction-webpack-plugin": "^4.25.13",
+    "@wordpress/edit-post": "^7.19.16",
+    "@wordpress/i18n": "^4.42.13",
+    "@wordpress/plugins": "^6.10.14",
+    "@wordpress/scripts": "^26.13.13",
+    "dompurify": "^3.0.8",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

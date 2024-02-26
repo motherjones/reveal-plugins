@@ -1,0 +1,9 @@
+{
+  "aggregate": true,
+
+  "base": "widgets/css/siderail",
+  "css": [
+    "common",
+    "default"
+  ]
+}

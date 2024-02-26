@@ -1,0 +1,13 @@
+{
+  "include": [
+    "components/proxy-each"
+  ],
+
+  "base": "components/overlay/base",
+  "js": [
+    "base"
+  ],
+  "css": [
+    "base"
+  ]
+}

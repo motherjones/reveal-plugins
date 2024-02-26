@@ -1,0 +1,16 @@
+{
+  "aggregate": true,
+  "include": [
+    "overlay-dialogs/base-widget"
+  ],
+
+  "base": "overlay-dialogs",
+  "js": [
+    "js/snippet",
+    "js/controller"
+  ],
+  "tpl": {
+    "editor": "tpl/snippet-editor",
+    "section": "tpl/section"
+  }
+}

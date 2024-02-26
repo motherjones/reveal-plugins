@@ -1,0 +1,10 @@
+{
+  "aggregate": true,
+  "include": [
+    "loader/loader"
+  ],
+
+  "js": [
+    "loader/init"
+  ]
+}

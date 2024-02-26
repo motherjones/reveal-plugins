@@ -1,0 +1,11 @@
+{
+  "aggregate": true,
+
+  "base": "widgets/css/storyline",
+  "css": [
+    "common",
+    "popup",
+    "buttons-common",
+    "split-button"
+  ]
+}

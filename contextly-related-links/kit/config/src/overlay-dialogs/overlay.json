@@ -1,0 +1,14 @@
+{
+  "aggregate": true,
+  "include": [
+    "components/overlay-default"
+  ],
+
+  "base": "overlay-dialogs",
+  "js": [
+    "js/overlay"
+  ],
+  "css": [
+    "css/overlay"
+  ]
+}

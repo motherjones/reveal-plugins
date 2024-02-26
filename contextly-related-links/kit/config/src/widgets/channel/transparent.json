@@ -1,0 +1,12 @@
+{
+  "aggregate": true,
+  "include": [
+    "widgets/button/transparent"
+  ],
+
+  "base": "widgets/css/channel",
+  "css": [
+    "common",
+    "popup"
+  ]
+}

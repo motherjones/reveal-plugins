@@ -1,0 +1,7 @@
+{
+  "base": "components/clients",
+  "js": [
+    "experience",
+    "direct"
+  ]
+}

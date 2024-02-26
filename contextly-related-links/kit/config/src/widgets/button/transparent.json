@@ -1,0 +1,7 @@
+{
+  "base": "widgets/css/button",
+  "css": [
+    "common",
+    "transparent"
+  ]
+}

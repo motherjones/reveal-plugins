@@ -1,0 +1,12 @@
+{
+  "aggregate": true,
+  "include": [
+    "widgets/button/split-button"
+  ],
+
+  "base": "widgets/css/channel",
+  "css": [
+    "common",
+    "popup"
+  ]
+}

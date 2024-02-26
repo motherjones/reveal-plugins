@@ -1,0 +1,12 @@
+{
+  "include": [
+    "components/metadata-parsers"
+  ],
+
+  "base": "components/metadata/providers",
+  "js": [
+    "base",
+    "custom",
+    "parsed"
+  ]
+}

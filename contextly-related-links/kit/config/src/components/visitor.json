@@ -1,0 +1,10 @@
+{
+  "include": [
+    "components/cookie"
+  ],
+
+  "base": "components",
+  "js": [
+    "visitor"
+  ]
+}

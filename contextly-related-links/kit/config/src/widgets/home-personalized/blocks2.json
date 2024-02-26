@@ -1,0 +1,8 @@
+{
+  "aggregate": true,
+
+  "base": "widgets/css/home-personalized",
+  "css": [
+    "block2"
+  ]
+}
