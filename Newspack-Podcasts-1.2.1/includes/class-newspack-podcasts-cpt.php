@@ -159,6 +159,12 @@ class Newspack_Podcasts_CPT {
 			</p>
 			<?php
 		endif;
+
+            $player_url = esc_url( get_post_meta( $post_id, 'podcast_player_url', true ) );
+?>
+        <p><input type="url" name="prx_player_url" placeholder="https://play.prx.org/e?uf=https://feeds.revealnews&ge=prx_123_-abcdef-1234-abcd-1234" value="<?php echo esc_attr( $player_url ); ?>"></p>
+        <p><em>Paste in the url of a podcast player player to get an embeded podcast player</em></p> 
+<?php
 	}
 
 	/**
@@ -170,11 +176,15 @@ class Newspack_Podcasts_CPT {
 	 */
 	public function save_meta_box( $post_id ) {
 		$podcast_file = filter_input( INPUT_POST, self::META_PODCAST_FILE, FILTER_SANITIZE_STRING );
-		if ( ! $podcast_file ) {
-			return;
+		if ( $podcast_file ) {
+            $podcast_file = sanitize_text_field( $podcast_file );
+            update_post_meta( $post_id, self::META_PODCAST_FILE, $podcast_file );
 		}
-		$podcast_file = sanitize_text_field( $podcast_file );
-		update_post_meta( $post_id, self::META_PODCAST_FILE, $podcast_file );
+		$podcast_player_url = filter_input( INPUT_POST, 'podcast_player_url', FILTER_SANITIZE_STRING );
+        if ( $podcast_player_url ) {
+            $podcast_player_url = esc_url($podcast_player_url)
+            update_post_meta( $post_id, 'podcast_player_url', $podcast_player_url );
+        }
 	}
 
 	/**

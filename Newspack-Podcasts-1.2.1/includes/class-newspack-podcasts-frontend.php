@@ -103,16 +103,23 @@ class Newspack_Podcasts_Frontend {
 		}
 
 		$podcast_url = Newspack_Podcasts_CPT::get_podcast_url();
-		if ( empty( $podcast_url ) ) {
-			return '';
-		}
+		$player_url = esc_url( get_post_meta( $post_id, 'podcast_player_url', true ) );
 
 		ob_start();
+        if ( !empty( $podcast_url ) ) {
 		?>
 <!-- wp:audio {"className":"newspack-podcast-player"} -->
 <figure class="wp-block-audio newspack-podcast-player"><audio controls src="<?php echo esc_url( $podcast_url ); ?>"></audio></figure>
 <!-- /wp:audio -->
 		<?php
+        }
+        if ( !empty( $player_url ) ) {
+?>
+<!-- wp:html -->
+<iframe frameborder="0" height="200" width="100%" src="<?php echo esc_url( $player_url ) ?>"></iframe>
+<!-- /wp:html -->
+<?php
+        }
 
 		return do_blocks( ob_get_clean() );
 	}
