@@ -121,7 +121,7 @@ class Newspack_Podcasts_CPT {
 
 		add_meta_box(
 			'newspack_podcasts_file',
-			__( 'Podcast Media File', 'newspack-podcasts' ),
+			__( 'Podcast Location', 'newspack-podcasts' ),
 			[ $this, 'render_meta_box' ],
 			self::NEWSPACK_PODCASTS_CPT
 		);
@@ -135,8 +135,29 @@ class Newspack_Podcasts_CPT {
 	 * @param WP_Post $post Post object of the current post.
 	 */
 	public function render_meta_box( $post ) {
+
+        //begin prx embed url
+        $player_url = esc_url( get_post_meta( $post_id, 'podcast_player_url', true ) );
+?>
+        <label for="podcast_player_url"><strong>PRX Embed URL</strong></label>
+        <p><input type="url" name="podcast_player_url" placeholder="https://play.prx.org/e?uf=https://feeds.revealnews&ge=prx_123_-abcdef-1234-abcd-1234" value="<?php echo esc_attr( $player_url ); ?>"></p>
+        <p><em>Paste in the url of a podcast player player to get an embeded podcast player</em></p> 
+<?php
+        if ( $player_url ) {
+?>
+        <p><strong>
+            Current podcast player url:
+            <?php echo esc_html( $player_url); ?>
+        </strong></p>
+<?php
+        }
+            //end prx embed url
+            //begin podcast file
 		$saved = self::get_podcast_file( $post->ID );
 		?>
+        <label for="<?php echo esc_attr( self::META_PODCAST_FILE ); ?>">
+            <strong>Podcast Media File</strong>
+        </label>
 		<p><input type='text' name='<?php echo esc_attr( self::META_PODCAST_FILE ); ?>' placeholder='example.mp3' value='<?php echo esc_attr( $saved ); ?>' /></p>
 		<p><em>Enter the filename of the media file (example.mp3) or a full path to the podcast media file (https://example.com/example.mp3)</em></p>
 		<?php
@@ -159,12 +180,7 @@ class Newspack_Podcasts_CPT {
 			</p>
 			<?php
 		endif;
-
-            $player_url = esc_url( get_post_meta( $post_id, 'podcast_player_url', true ) );
-?>
-        <p><input type="url" name="podcast_player_url" placeholder="https://play.prx.org/e?uf=https://feeds.revealnews&ge=prx_123_-abcdef-1234-abcd-1234" value="<?php echo esc_attr( $player_url ); ?>"></p>
-        <p><em>Paste in the url of a podcast player player to get an embeded podcast player</em></p> 
-<?php
+            //end podcast file
 	}
 
 	/**
