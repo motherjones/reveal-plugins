@@ -137,7 +137,7 @@ class Newspack_Podcasts_CPT {
 	public function render_meta_box( $post ) {
 
         //begin prx embed url
-        $player_url = esc_url( get_post_meta( $post_id, 'podcast_player_url', true ) );
+        $player_url = get_post_meta( $post->ID, 'podcast_player_url', true );
 ?>
         <label for="podcast_player_url"><strong>PRX Embed URL</strong></label>
         <p><input type="url" name="podcast_player_url" placeholder="https://play.prx.org/e?uf=https://feeds.revealnews&ge=prx_123_-abcdef-1234-abcd-1234" value="<?php echo esc_attr( $player_url ); ?>"></p>
