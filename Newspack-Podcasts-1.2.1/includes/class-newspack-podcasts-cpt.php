@@ -195,13 +195,20 @@ class Newspack_Podcasts_CPT {
 		if ( $podcast_file ) {
             $podcast_file = sanitize_text_field( $podcast_file );
             update_post_meta( $post_id, self::META_PODCAST_FILE, $podcast_file );
-		}
+        }
+		if ( '' === $podcast_file ) {
+            delete_post_meta( $post_id, self::META_PODCAST_FILE );
+        }
+
 		$podcast_player_url = filter_input( INPUT_POST, 'podcast_player_url', FILTER_SANITIZE_STRING );
         if ( $podcast_player_url ) {
             $podcast_player_url = esc_url($podcast_player_url);
             update_post_meta( $post_id, 'podcast_player_url', $podcast_player_url );
         }
-	}
+        if ( '' ===  $podcast_player_url ) {
+            delete_post_meta( $post_id, 'podcast_player_url' );
+        }
+    }
 
 	/**
 	 * Treat posts of this post type like regular posts when querying.
