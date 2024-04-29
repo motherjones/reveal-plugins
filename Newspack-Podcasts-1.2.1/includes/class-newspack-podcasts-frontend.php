@@ -110,7 +110,7 @@ class Newspack_Podcasts_Frontend {
 		ob_start();
 		?>
 <!-- wp:audio {"className":"newspack-podcast-player"} -->
-<figure class="wp-block-audio newspack-podcast-player"><audio controls src="<?php echo esc_url( $podcast_url ); ?>"></audio></figure>
+<figure class="wp-block-audio newspack-podcast-player"><audio controls preload="none" src="<?php echo esc_url( $podcast_url ); ?>"></audio></figure>
 <!-- /wp:audio -->
 		<?php
 
