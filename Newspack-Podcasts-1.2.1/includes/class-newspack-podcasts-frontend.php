@@ -57,10 +57,10 @@ class Newspack_Podcasts_Frontend {
 			return $content;
 		}
 
-		$markup  = $this->get_player_html();
-		$markup .= $this->get_next_prev_links_html();
+		$player  = $this->get_player_html();
+		$next_prev = $this->get_next_prev_links_html();
 
-		return $markup . $content;
+		return $player . $content . $next_prev;
 	}
 
 	/**
@@ -110,7 +110,7 @@ class Newspack_Podcasts_Frontend {
 		ob_start();
 		?>
 <!-- wp:audio {"className":"newspack-podcast-player"} -->
-<figure class="wp-block-audio newspack-podcast-player"><audio controls src="<?php echo esc_url( $podcast_url ); ?>"></audio></figure>
+<figure class="wp-block-audio newspack-podcast-player"><audio controls preload="none" src="<?php echo esc_url( $podcast_url ); ?>"></audio></figure>
 <!-- /wp:audio -->
 		<?php
 
@@ -195,4 +195,3 @@ class Newspack_Podcasts_Frontend {
 	}
 }
 Newspack_Podcasts_Frontend::instance();
-
