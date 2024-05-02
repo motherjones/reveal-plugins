@@ -57,10 +57,10 @@ class Newspack_Podcasts_Frontend {
 			return $content;
 		}
 
-		$markup  = $this->get_player_html();
-		$markup .= $this->get_next_prev_links_html();
+		$player  = $this->get_player_html();
+		$next_prev = $this->get_next_prev_links_html();
 
-		return $markup . $content;
+		return $player . $content . $next_prev;
 	}
 
 	/**
@@ -195,4 +195,3 @@ class Newspack_Podcasts_Frontend {
 	}
 }
 Newspack_Podcasts_Frontend::instance();
-
